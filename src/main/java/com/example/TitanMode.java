@@ -17,6 +17,8 @@ public class TitanMode implements ModInitializer {
 
   // 1. Создаём наш предмет через кастомный метод регистрации из видео
   public static final Item TITAN_DUST = registerItem("titan_dust", new Item.Properties());
+  public static final Item TITAN_INGOT = registerItem("titan_ingot", new Item.Properties());
+  public static final Item DIAMOND_STICK = registerItem("diamond_stick", new Item.Properties());
 
   // 2. Метод из видео, который сам создаёт ResourceKey и спасает от ошибки id
   private static Item registerItem(String name, Item.Properties properties) {
@@ -36,6 +38,8 @@ public class TitanMode implements ModInitializer {
     // 3. Добавляем титановую пыль во вкладку Ингредиентов в креативе
     ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
       entries.accept(TITAN_DUST);
+      entries.accept(TITAN_INGOT);
+      entries.accept(DIAMOND_STICK);
     });
   }
 }

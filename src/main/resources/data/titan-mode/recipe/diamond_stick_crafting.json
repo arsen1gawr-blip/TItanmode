@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": "minecraft:diamond"
+  },
+  "result": {
+    "id": "titan-mode:diamond_stick",
+    "count": 4
+  }
+}
