@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "titan-mode",
+	"version": "${version}",
+	"name": "titan-mode",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/titan-mode/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.example.TitanMode"
+		],
+		"client": [
+			"com.example.client.TitanModeClient"
+		],
+		"fabric-datagen": [
+			"com.example.client.TitanModeDataGenerator"
+		]
+	},
+	"mixins": [
+		"titan-mode.mixins.json",
+		{
+			"config": "titan-mode.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
