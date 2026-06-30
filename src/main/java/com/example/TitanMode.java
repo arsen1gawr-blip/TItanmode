@@ -31,7 +31,7 @@ public class TitanMode implements ModInitializer {
 
   // === БЛОКИ МОДА (По канону документации Fabric 1.21.11) ===
   public static final Block DEEPSLATE_TITAN_ORE = register("deepslate_titan_ore", Block::new,
-      BlockBehaviour.Properties.of().destroyTime(4.5f).explosionResistance(3.0f).requiresCorrectToolForDrops(), true);
+      BlockBehaviour.Properties.of().destroyTime(17.0f).explosionResistance(3.0f).requiresCorrectToolForDrops(), true);
 
   @Override
   public void onInitialize() {
