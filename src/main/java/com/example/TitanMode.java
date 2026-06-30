@@ -13,6 +13,9 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import java.util.function.Function;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.world.level.levelgen.GenerationStep;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +45,11 @@ public class TitanMode implements ModInitializer {
       entries.accept(DIAMOND_STICK);
       entries.accept(DEEPSLATE_TITAN_ORE.asItem()); // Получаем предмет глубинной руды!
     });
+    // Инструкция для спавна руды по всему верхнему миру
+    BiomeModifications.addFeature(
+        BiomeSelectors.foundInOverworld(),
+        GenerationStep.Decoration.UNDERGROUND_ORES,
+        ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(MOD_ID, "titan_ore")));
   }
 
   // === Вспомогательный метод регистрации БЛОКОВ из официального гайда ===
